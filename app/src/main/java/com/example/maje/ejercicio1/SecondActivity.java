@@ -8,7 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class SecondActivity extends AppCompatActivity implements View.OnClickListener{
+import com.example.maje.ejercicio1.com.test.beans.PersonaUnica;
+
+//public class SecondActivity extends AppCompatActivity implements View.OnClickListener{
+public class SecondActivity extends AppCompatActivity{
 
     private Button boton;
     private EditText calle;
@@ -17,16 +20,17 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
     public String nombre;
     public String apellido;
 
+    public PersonaUnica persona;
     public static final String calle_INIT="calle";
     public static final String CP_INIT="cp";
-    @Override
+    //@Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_activity);
-        Intent intent = this.getIntent();
-        init();
-        Toast x;
+        //Intent intent = this.getIntent();
+        //init();
+       /* Toast x;
         if(intent!= null) {
 
              nombre = intent.getStringExtra(MainActivity.Nombre_INTENT);
@@ -38,14 +42,16 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
             x=Toast.makeText(this, "no hay datos",Toast.LENGTH_LONG);
         }
 
-        x.show();
+        x.show();*/
+
+       Toast.makeText(this, persona.getNombre(),Toast.LENGTH_LONG).show();
 
         Button btn=findViewById(R.id.botoncito);
-        btn.setOnClickListener(this);
+        //btn.setOnClickListener(this);
 
     }
 
-    private void init() {
+    /*private void init() {
         boton=(Button)findViewById(R.id.botoncito);
         calle=(EditText)findViewById(R.id.CalleEditText);
         cp=(EditText)findViewById(R.id.CPeditText3);
@@ -76,8 +82,8 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
             nombre = preciusIntent.getStringExtra((MainActivity.Nombre_INTENT));
         }
         Intent intent = new Intent(this, Third_activity.class);
-        intent.putExtra(SecondActivity.calle_INIT, calle.getText().toString());
-        intent.putExtra(SecondActivity.CP_INIT, cp.getText().toString());
+        //intent.putExtra(SecondActivity.calle_INIT, calle.getText().toString());
+        //intent.putExtra(SecondActivity.CP_INIT, cp.getText().toString());
 
 
         if(nombre!=null){
@@ -85,5 +91,5 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         }
 
         startActivity(intent);
-    }
+    }*/
 }

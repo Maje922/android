@@ -16,10 +16,6 @@ public class PersonaUnica {
     private PersonaUnica() {
     }
 
-    public static PersonaUnica getOurInstance() {
-        return ourInstance;
-    }
-
     public String getNombre() {
         return nombre;
     }

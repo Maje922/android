@@ -10,12 +10,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.maje.ejercicio1.com.test.beans.DireccionDTO;
+import com.example.maje.ejercicio1.com.test.beans.PersonaUnica;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private EditText nombre;
     private EditText apellido;
 
 
 
+    public PersonaUnica persona;
+    public DireccionDTO direccion = new DireccionDTO();
     public static final String Nombre_INTENT ="nombre";
     public static final String Apellido_INTENT ="apellido";
    // private view  btn1;
@@ -23,8 +28,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         nombre =(EditText) findViewById(R.id.NombreeditText);
         apellido =(EditText) findViewById(R.id.ApellidoeditText2);
+
+
+
+
 
 
         Button btn=findViewById(R.id.OKbutton);
@@ -43,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    @Override
+    /*@Override
     protected void onStart() {
         nombre=findViewById(R.id.NombreeditText);
         apellido=findViewById(R.id.ApellidoeditText2) ;
@@ -73,17 +84,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-    }
+    }*/
 
     @Override
     public void onClick(View v) {
 
         switch(v.getId()){
             case R.id.OKbutton:
-                Intent intent = new Intent(this,SecondActivity.class);
-                intent.putExtra(MainActivity.Nombre_INTENT,nombre.getText().toString());
-                intent.putExtra(MainActivity.Apellido_INTENT,apellido.getText().toString());
+                persona = PersonaUnica.getInstance();
 
+                //intent.putExtra(MainActivity.Nombre_INTENT,nombre.getText().toString());
+                //intent.putExtra(MainActivity.Apellido_INTENT,apellido.getText().toString());
+                persona.setNombre(nombre.getText().toString());
+                persona.setDireccion(direccion);
+                Intent intent = new Intent(this,Main2Activity.class);
                 startActivity(intent);
 
                 //Toast.makeText(this,"no pasa nada",Toast.LENGTH_LONG).show();
