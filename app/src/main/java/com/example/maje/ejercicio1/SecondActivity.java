@@ -22,9 +22,6 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_activity);
         Intent intent = this.getIntent();

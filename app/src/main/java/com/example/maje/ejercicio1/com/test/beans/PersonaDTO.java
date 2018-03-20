@@ -1,10 +1,12 @@
 package com.example.maje.ejercicio1.com.test.beans;
 
+import java.io.Serializable;
+
 /**
  * Created by Maje on 15/03/2018.
  */
 
-public class PersonaDTO {
+public class PersonaDTO implements Serializable {
     private String nombre;
     private DireccionDTO direccion;
 
@@ -30,6 +32,24 @@ public class PersonaDTO {
 
     public void setDireccion(DireccionDTO direccion) {
         this.direccion = direccion;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        PersonaDTO that = (PersonaDTO) o;
+
+        if (!getNombre().equals(that.getNombre())) return false;
+        return getDireccion().equals(that.getDireccion());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getNombre().hashCode();
+        result = 31 * result + getDireccion().hashCode();
+        return result;
     }
 
 }
