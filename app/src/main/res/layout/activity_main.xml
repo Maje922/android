@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.maje.ejercicio1.MainActivity">
+
+
+    <TextView
+        android:id="@+id/NombretextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/NombreeditText"
+        android:layout_alignEnd="@+id/ApellidotextView2"
+        android:layout_alignRight="@+id/ApellidotextView2"
+        android:text="@string/nombreEditText" />
+
+    <EditText
+        android:id="@+id/NombreeditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ApellidotextView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="33dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/nombreHintText" />
+
+    <TextView
+        android:id="@+id/ApellidotextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ApellidoeditText2"
+        android:layout_alignLeft="@+id/NombreeditText"
+        android:layout_alignStart="@+id/NombreeditText"
+        android:layout_marginBottom="34dp"
+        android:text="@string/apellidoEditText" />
+
+    <EditText
+        android:id="@+id/ApellidoeditText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ApellidotextView2"
+        android:layout_alignStart="@+id/ApellidotextView2"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/apellidoHintText" />
+
+    <CheckBox
+        android:id="@+id/iougogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ApellidoeditText2"
+        android:layout_marginTop="39dp"
+        android:layout_toEndOf="@+id/ApellidotextView2"
+        android:layout_toRightOf="@+id/ApellidotextView2"
+        android:text="@string/casadoText" />
+
+    <Button
+        android:id="@+id/OKbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/NombretextView"
+        android:layout_alignStart="@+id/NombretextView"
+        android:layout_below="@+id/iougogo"
+        android:layout_marginTop="37dp"
+        android:text="OK" />
+
+    <Button
+        android:id="@+id/ResetButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/OKbutton"
+        android:layout_toEndOf="@+id/iougogo"
+        android:layout_toRightOf="@+id/iougogo"
+        android:text="Reset" />
+
+</RelativeLayout>

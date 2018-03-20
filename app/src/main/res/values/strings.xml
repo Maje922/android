@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Ejercicio1</string>
+    <string name="nombreEditText">nombre</string>
+    <string name="nombreHintText">nombre</string>
+    <string name="apellidoEditText">apellido</string>
+    <string name="apellidoHintText">apellido</string>
+    <string name="casadoText">casado</string>
+    <string name="Nombre">NombreTextView</string>
+    <string name="OKButton">OK</string>
+    <string name="checkbodx">CheckBodx</string>
+</resources>
