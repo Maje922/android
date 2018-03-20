@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     public PersonaUnica persona;
-    public DireccionDTO direccion = new DireccionDTO();
+
     public static final String Nombre_INTENT ="nombre";
     public static final String Apellido_INTENT ="apellido";
    // private view  btn1;
@@ -96,8 +96,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //intent.putExtra(MainActivity.Nombre_INTENT,nombre.getText().toString());
                 //intent.putExtra(MainActivity.Apellido_INTENT,apellido.getText().toString());
                 persona.setNombre(nombre.getText().toString());
-                persona.setDireccion(direccion);
-                Intent intent = new Intent(this,Main2Activity.class);
+
+                Intent intent = new Intent(this,SecondActivity.class);
                 startActivity(intent);
 
                 //Toast.makeText(this,"no pasa nada",Toast.LENGTH_LONG).show();

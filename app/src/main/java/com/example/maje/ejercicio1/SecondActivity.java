@@ -8,10 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.maje.ejercicio1.com.test.beans.DireccionDTO;
 import com.example.maje.ejercicio1.com.test.beans.PersonaUnica;
 
-//public class SecondActivity extends AppCompatActivity implements View.OnClickListener{
-public class SecondActivity extends AppCompatActivity{
+public class SecondActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Button boton;
     private EditText calle;
@@ -20,7 +20,7 @@ public class SecondActivity extends AppCompatActivity{
     public String nombre;
     public String apellido;
 
-    public PersonaUnica persona;
+    public PersonaUnica persona = PersonaUnica.getInstance();
     public static final String calle_INIT="calle";
     public static final String CP_INIT="cp";
     //@Override
@@ -29,7 +29,7 @@ public class SecondActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_activity);
         //Intent intent = this.getIntent();
-        //init();
+        init();
        /* Toast x;
         if(intent!= null) {
 
@@ -47,16 +47,16 @@ public class SecondActivity extends AppCompatActivity{
        Toast.makeText(this, persona.getNombre(),Toast.LENGTH_LONG).show();
 
         Button btn=findViewById(R.id.botoncito);
-        //btn.setOnClickListener(this);
+        btn.setOnClickListener(this);
 
     }
 
-    /*private void init() {
+    private void init() {
         boton=(Button)findViewById(R.id.botoncito);
         calle=(EditText)findViewById(R.id.CalleEditText);
         cp=(EditText)findViewById(R.id.CPeditText3);
     }
-    @Override
+    /*@Override
     protected void onStop() {
         super.onStop();
         Toast.makeText(this, "onStop2",Toast.LENGTH_LONG).show();
@@ -72,11 +72,24 @@ public class SecondActivity extends AppCompatActivity{
     protected void onDestroy() {
         super.onDestroy();
         Toast.makeText(this, "onDestroy2",Toast.LENGTH_LONG).show();
-    }
+    }*/
 
     @Override
     public void onClick(View v) {
-        Intent preciusIntent = getIntent();
+
+
+
+        //intent.putExtra(MainActivity.Nombre_INTENT,nombre.getText().toString());
+        //intent.putExtra(MainActivity.Apellido_INTENT,apellido.getText().toString());
+
+        persona.setDireccion(new DireccionDTO(calle.getText().toString(),cp.getText().toString()));
+
+        Intent intent = new Intent(this,Third_activity.class);
+        startActivity(intent);
+
+        //Toast.makeText(this,"no pasa nada",Toast.LENGTH_LONG).show();
+        return;
+       /* Intent preciusIntent = getIntent();
 
         if(preciusIntent!=null) {
             nombre = preciusIntent.getStringExtra((MainActivity.Nombre_INTENT));
@@ -90,6 +103,6 @@ public class SecondActivity extends AppCompatActivity{
             intent.putExtra(MainActivity.Nombre_INTENT,nombre);
         }
 
-        startActivity(intent);
-    }*/
+        startActivity(intent);*/
+    }
 }
