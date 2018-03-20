@@ -45,7 +45,7 @@ public class Third_activity extends AppCompatActivity implements View.OnClickLis
     }
 
     private void init(){
-        Toast.makeText(this,"nombre: " + persona.getNombre() + "calle: " + persona.getDireccion().getCalle() +"CP: " + persona.getDireccion().getCd(),Toast.LENGTH_LONG).show();
+        Toast.makeText(this,"nombre: " + persona.getNombre() + " calle: " + persona.getDireccion().getCalle() +" CP: " + persona.getDireccion().getCd(),Toast.LENGTH_LONG).show();
 
     }
 
